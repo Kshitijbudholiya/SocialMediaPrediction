@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Social Media Engagement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Predicting Social Media Engagement</h1>
+            <p>Welcome back! Please login to your account or sign up to get started.</p>
+        </div>
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="loginForm" class="form" method="post" action="/verify-login">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p class="toggle-text">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="form hidden" method="post" action="/verify-signup">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" id="signupName" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p class="toggle-text">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+        {% if errorMessage %}
+        <div id="signupMessage" style="color: red; text-align: center; margin-top: 20px;">
+            {{errorMessage}}
+        </div>
+        {% elif successMessage %}
+        <div id="signupMessage" style="color: green; text-align: center; margin-top: 20px;">
+            {{successMessage}}
+        </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

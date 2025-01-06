@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.header p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.form-container {
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form.hidden {
+    display: none;
+}
+
+.input-group {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.toggle-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.toggle-text a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.toggle-text a:hover {
+    color: #2575fc;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+
+    .header p {
+        font-size: 0.8rem;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .toggle-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
